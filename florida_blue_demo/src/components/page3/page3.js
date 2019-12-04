@@ -1,4 +1,7 @@
 import React, { PureComponent } from "react";
+import { withStyles } from "@material-ui/core";
+import { landingPage } from "../landingPage/landingPagesstyles";
+import Spinner from "../spinner";
 
 class Page3 extends PureComponent {
   constructor(props) {
@@ -8,8 +11,14 @@ class Page3 extends PureComponent {
   }
 
   render() {
-    return <h1>Page 3</h1>;
+    const { classes } = this.props;
+    return (
+      <div>
+        <Spinner />
+        <h1 className={classes.header}>Page 3</h1>
+      </div>
+    );
   }
 }
 
-export default Page3;
+export default withStyles(landingPage)(Page3);
